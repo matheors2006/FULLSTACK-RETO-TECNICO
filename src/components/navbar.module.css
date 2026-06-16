@@ -3,9 +3,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #ef5350;
+  background-color: var(--primary); /* Conectado al tema */
   color: white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.4s ease;
 }
 
 .brand a {
@@ -21,15 +22,75 @@
   gap: 1.5rem;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
-.links a {
+.links a, .dropbtn {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  cursor: pointer;
   transition: opacity 0.2s;
 }
 
-.links a:hover {
+.links a:hover, .dropdown:hover .dropbtn {
   opacity: 0.8;
+}
+
+/* Lógica del menú desplegable corregida */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 10px 0; /* Crea un puente invisible hacia abajo */
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  top: 100%; /* Comienza exactamente donde termina el padre */
+  right: 0;
+  background-color: var(--card-bg);
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 0; /* Eliminamos el espacio muerto que cerraba el menú */
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.themeOption {
+  color: var(--text-main);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: background-color 0.2s;
+}
+
+.themeOption:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.activeTheme {
+  font-weight: bold;
+  border-left: 4px solid var(--primary);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

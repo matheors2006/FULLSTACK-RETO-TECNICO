@@ -1,10 +1,10 @@
 .card {
-  background: white;
+  background: var(--card-bg);
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
   padding: 1rem;
   text-align: center;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.4s ease;
   cursor: pointer;
   position: relative;
   display: flex;
@@ -14,11 +14,11 @@
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.15);
 }
 
 .imageContainer {
-  background: #f8f9fa;
+  background: rgba(0, 0, 0, 0.03);
   border-radius: 8px;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -36,7 +36,8 @@
   text-transform: capitalize;
   margin: 0.5rem 0;
   font-size: 1.25rem;
-  color: #2d3748;
+  color: var(--text-main);
+  transition: color 0.4s ease;
 }
 
 .types {
@@ -48,20 +49,21 @@
 }
 
 .typeBadge {
-  background: #e2e8f0;
+  background: var(--primary);
+  color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: bold;
   text-transform: capitalize;
-  color: #4a5568;
+  transition: background-color 0.4s ease;
 }
 
 .favButton {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: white;
+  background: var(--card-bg);
   border: none;
   border-radius: 50%;
   width: 35px;
@@ -72,7 +74,7 @@
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   font-size: 1.2rem;
-  transition: transform 0.1s;
+  transition: transform 0.1s, background-color 0.4s;
 }
 
 .favButton:active {

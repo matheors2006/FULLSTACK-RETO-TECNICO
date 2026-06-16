@@ -3,7 +3,7 @@ export default function Loader() {
     <div style={{ display: 'flex', justifyContent: 'center', padding: '2rem', width: '100%' }}>
       <div style={{
         border: '4px solid #f3f3f3',
-        borderTop: '4px solid #ef5350',
+        borderTop: '4px solid var(--primary)',
         borderRadius: '50%',
         width: '40px',
         height: '40px',
